@@ -2,22 +2,25 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const Div =  styled.div`
-padding: 2%;
+padding: 8%;
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: 30%;
-margin: 0 3em;
+align-items: center;
 text-align: center;
+border: 1px solid black;
 
 img {
-    width: 12em;
-    height: 12em;
+    width: 5em;
+    height: 5em;
 }
 
 button {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
+    margin: 1em auto;
+    padding: 3%;
+    background-color: #1f7a1f;
+    color: #f2f2f2;
 }
 `
 
@@ -54,9 +57,6 @@ const InventoryItem = (props) => {
         <Div>
             <img src={props.image} alt={props.name}/>
             <h5>{props.name}</h5>
-            <p>Quantity</p>
-          
-
             <button onClick={e => {
                 deleteProduct(props.item)
             }}>Delete</button>

@@ -5,7 +5,7 @@ import Registration from "./components/Registration";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import Farms from './components/Farms';
+import Farms from './components/farms/Farms';
 import InventoryList from "./components/InventoryList";
 import FarmerDasboard from "./components/FarmerDashboard";
 import EditForm from "./components/EditForm";

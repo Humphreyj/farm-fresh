@@ -14,32 +14,9 @@ code {
 
 /* Nav */
 
-.navigation{
-  background:#1f7a1f ;
-  margin: 0 auto;
-  height: 80px;
-  font-size: 2.3rem;
-  padding-top: 10px;
-  
 
-}
 
-.nav-link{
-  text-decoration: none ;
-  float: left;
-  padding-top: 10px;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  
-  
 
-}
-
-a:hover{
-    color: #a6a6a6;
-
-  }
 
   /* Products */
 

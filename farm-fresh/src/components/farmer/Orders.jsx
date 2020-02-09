@@ -26,18 +26,28 @@ align-items: center;
 
 const Orders = (props) => {
     let id = localStorage.getItem("farmId");
-    const [farmerOrders, setFarmerOrders] = useState([]);
+    const [farmerOrders, setFarmerOrders] = useState(false);
     useEffect(() => {
-        
+        props.orders.orders.map((item) => {
+            return item.map(obj =>{
+                 
+                return( 
+                    obj.farm_id == id ? setFarmerOrders(true) : setFarmerOrders(false))
+                
+            })
+            
+                })
 
     },[])
     return (
         <Div>
-            <h4>Incoming Orders</h4>
+            {farmerOrders ? <h4>Incoming Orders</h4> : <h4>You have no orders.</h4> }
             <div>
                 {props.orders.orders.map((item) => {
             return item.map(obj =>{
-                return( obj.farm_id == id ? <div className='order'>
+                 
+                return( 
+                    obj.farm_id == id ? <div className='order'>
                     <p className='product_name'>{obj.product_name}</p>
                     <p className='quantity_in_cart'>Amount: {obj.quantity_in_cart}</p>
                         </div> : '')

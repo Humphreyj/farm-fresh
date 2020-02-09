@@ -69,7 +69,7 @@ const Registration = props => {
   });
   const [farmDetails, updateFarmDetails] = useState({
     farm_name: "",
-    owner_id: 0,
+    owner_id: Date.now(),
     address: "",
     city: "",
     state: "",
@@ -96,7 +96,7 @@ const Registration = props => {
         .then(res => {
           // localStorage.setItem('token', res.data.token);
           console.log("res.data.id", res.data.id);
-          updateFarmDetails({ farmDetails, owner_id: res.data.id });
+          localStorage.setItem("farmId", res.data.id);
           console.log("owner_id", farmDetails.owner_id);
           axiosWithAuth()
             .post(
@@ -105,7 +105,7 @@ const Registration = props => {
             )
             .then(response => {
               console.log(response);
-              localStorage.setItem("farmId", response.data);
+              
             })
             .catch(error => {
               console.log(error);
@@ -126,10 +126,9 @@ const Registration = props => {
           credentials
         )
         .then(res => {
-          localStorage.setItem("token", res.data.token);
           props.history.push("/login-user");
-          console.log(credentials);
         });
+
       setLoading({ ...loading, isLoading: true });
       setTimeout(() => {
         setLoading({ ...loading, isLoading: false });

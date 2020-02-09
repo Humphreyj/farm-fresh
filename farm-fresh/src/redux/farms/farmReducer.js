@@ -1,7 +1,13 @@
 const initialState = {
-    title: 'Farm Fresh'
+    farms: []
 }
 
 export const farmReducer = (state =  initialState, action) => {
-    return state;
+    switch(action.type) {
+        case 'FETCH_FARMS':
+            return {...state, farms: action.payload};
+        default:
+            return state;
+    }
+    
 };

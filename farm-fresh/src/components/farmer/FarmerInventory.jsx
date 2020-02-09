@@ -8,10 +8,10 @@ import { connect } from 'react-redux';
 const Div = styled.div`
 border: 1px solid black;
 display: flex;
-width:80%;
+width:90%;
 margin: 1em auto;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: center;
 align-items: center;
 padding: 4%;
 .inventory-items {
@@ -175,8 +175,6 @@ const FarmerInventory = ({orders}) => {
   
           {currentProducts ? currentProducts.map(item => {
                 if(item.farm_id == id) {
-                  
-                  
 
                     return(
                         <InventoryItem
